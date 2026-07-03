@@ -1,6 +1,6 @@
 # CloudStream
 
-**⚠️ Warning: By default, this app doesn't provide any video sources; you have to install extensions to add functionality to the app.**
+**⚠️ Warning: By default, this app doesn't provide any video sources; you have to install extensions to add functionality to the app.** 
 
 [![Discord](https://invidget.switchblade.xyz/5Hus6fM)](https://discord.gg/5Hus6fM)
 
