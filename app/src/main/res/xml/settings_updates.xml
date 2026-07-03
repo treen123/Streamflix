@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
-        android:title="@string/pref_category_app_updates">
+        android:title="@string/pref_category_app_updates" android:visible="false">
         <Preference
             android:title="@string/check_for_update"
             app:icon="@drawable/ic_baseline_system_update_24"
@@ -24,7 +24,7 @@
             android:icon="@drawable/ic_baseline_notifications_active_24"
             android:summary="@string/updates_settings_des"
             android:title="@string/updates_settings"
-            app:defaultValue="true"
+            app:defaultValue="false"
             app:key="@string/auto_update_key" />
     </PreferenceCategory>
 
