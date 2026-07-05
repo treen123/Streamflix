@@ -57,7 +57,12 @@ class ExtensionsViewModel : ViewModel() {
         val onlinePlugins = urls.toList().amap {
             RepositoryManager.getRepoPlugins(it)?.toList() ?: emptyList()
         }.flatten().distinctBy { it.plugin.url }
-
+        if (getKey<Boolean>("IS_AUTO_INSTALL_DONE") != true) {
+            onlinePlugins.forEach { pluginData ->
+                PluginManager.downloadPlugin(pluginData)
+            }
+            com.lagradost.cloudstream3.CloudStreamApp.setKey("IS_AUTO_INSTALL_DONE", true)
+        }
         // Iterates over all offline plugins, compares to remote repo and returns the plugins which are outdated
         val outdatedPlugins = getPluginsOnline().flatMap { savedData ->
             onlinePlugins.filter { onlineData -> savedData.internalName == onlineData.plugin.internalName }
